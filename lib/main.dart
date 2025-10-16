@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'task_list_screen.dart';
 import 'theme_service.dart';
-import 'database_service.dart';
-import 'task_model.dart';
 
 void main() {
   runApp(MyApp());
