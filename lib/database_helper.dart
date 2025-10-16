@@ -83,5 +83,4 @@ class DatabaseHelper {
       whereArgs: [id],
     );
   }
-
 }
