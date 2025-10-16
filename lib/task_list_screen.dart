@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'theme_service.dart';
+import 'add_task_dialog.dart';
 
 
 // Main screen for displaying and managing tasks
@@ -40,6 +41,16 @@ class _TaskListScreenState extends State<TaskListScreen> {
     widget.onThemeChanged(newThemeValue);
   }
 
+  // Show add task dialog
+  void _showAddTaskDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => AddTaskDialog(onAddTask: (name, priority) {
+        // we will set up adding task later
+      }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +71,11 @@ class _TaskListScreenState extends State<TaskListScreen> {
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 18, color: Colors.grey),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _showAddTaskDialog,
+        tooltip: 'Add Task',
+        child: Icon(Icons.add),
       ),
     );
   }
